@@ -7,12 +7,33 @@ import { Observable } from 'rxjs';
 export class DadosService {
   // Dados do gráfico, estático.
   readonly data = [
-    // [Gênero musical, Quantidade de pessoas que o escolheram]
-    ['Sertanejo pop', 82],
-    ['Sertanejo universitário', 77],
-    ['Sertanejo', 75],
-    ['Funk carioca', 62],
-    ['Pop', 58],
+    // Gênero musical
+    // Porcentagem de pessoas que o escolheram
+    {
+      name: 'Sertanejo pop',
+      y: 39.23,
+      color: '#904C77',
+    },
+    {
+      name: 'Sertanejo universitário',
+      y: 35.14,
+      color: '#E49AB0',
+    },
+    {
+      name: 'Sertanejo',
+      y: 18,
+      color: '#ECB8A5',
+    },
+    {
+      name: 'Funk carioca',
+      y: 6,
+      color: '#899878',
+    },
+    {
+      name: 'Pop',
+      y: 1.63,
+      color: '#93B7BE',
+    },
   ];
 
   constructor() {}
