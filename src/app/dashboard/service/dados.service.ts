@@ -10,29 +10,49 @@ export class DadosService {
     // Gênero musical
     // Porcentagem de pessoas que o escolheram
     {
-      name: 'Sertanejo pop',
-      y: 39.23,
-      color: '#904C77',
+      name: 'Pagode',
+      y: 1567,
+      color: '#ffadad',
     },
     {
-      name: 'Sertanejo universitário',
-      y: 35.14,
-      color: '#E49AB0',
+      name: 'Axé',
+      y: 2548,
+      color: '#ffd6a5',
     },
     {
       name: 'Sertanejo',
-      y: 18,
-      color: '#ECB8A5',
+      y: 3265,
+      color: '#fdffb6',
     },
     {
-      name: 'Funk carioca',
-      y: 6,
-      color: '#899878',
+      name: 'Country',
+      y: 4546,
+      color: '#caffbf',
     },
     {
-      name: 'Pop',
-      y: 1.63,
-      color: '#93B7BE',
+      name: 'Sertanejo universitário',
+      y: 5466,
+      color: '#9bf6ff',
+    },
+    {
+      name: 'Samba',
+      y: 5467,
+      color: '#a0c4ff',
+    },
+    {
+      name: 'Dance',
+      y: 6456,
+      color: '#bdb2ff',
+    },
+    {
+      name: 'Reggae',
+      y: 8746,
+      color: '#ffc6ff',
+    },
+    {
+      name: 'Forró',
+      y: 9846,
+      color: '#f4f9e9',
     },
   ];
 
