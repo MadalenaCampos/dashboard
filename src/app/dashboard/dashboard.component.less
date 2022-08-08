@@ -12,14 +12,20 @@
   }
 
   &-graficos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    margin: 16px;
   }
 
-  .informativo {
+  &-informativo {
     padding: 0 16px 16px 24px;
+
+    p {
+      color: #ddd9d9;
+      font-size: 14px;
+    }
+
     a {
       font-weight: 600;
       text-decoration: none;

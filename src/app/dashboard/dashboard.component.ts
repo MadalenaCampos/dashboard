@@ -21,13 +21,14 @@ noData(Highcharts);
   styleUrls: ['./dashboard.component.less'],
 })
 export class DashboardComponent implements OnInit {
-  public generosMaisOuvidos!: any;
+  public graficoDeRosca!: any;
+  public graficosDeBarras!: any;
 
   constructor(private dadosService: DadosService) {}
 
   public carregarGraficoDeRosca() {
     this.dadosService.getDados().subscribe((data) => {
-      this.generosMaisOuvidos = {
+      this.graficoDeRosca = {
         chart: {
           plotBorderWidth: 0,
           plotShadow: false,
@@ -70,10 +71,56 @@ export class DashboardComponent implements OnInit {
       };
     });
 
-    Highcharts.chart('graficoDeRosca', this.generosMaisOuvidos);
+    Highcharts.chart('graficoDeRosca', this.graficoDeRosca);
+  }
+
+  public carregarGraficoDeBarras() {
+    this.dadosService.getDados().subscribe((data) => {
+      this.graficosDeBarras = {
+        chart: {
+          type: 'column',
+        },
+        credits: {
+          enabled: false,
+        },
+        title: {
+          text: '',
+        },
+        legend: {
+          enabled: false,
+        },
+        xAxis: {
+          // Reduz a quantidade de caracteres de palavras com mais de 4 caracteres.
+          categories: data.map((item) => {
+            if (item.name.length > 4) {
+              return item.name.substr(0, 4) + '...';
+            } else {
+              return item.name;
+            }
+          }),
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: '',
+          },
+        },
+        tooltip: {
+          pointFormat: '<b>{point.y:.0f}</b>',
+        },
+        series: [
+          {
+            data: data,
+          },
+        ],
+      };
+    });
+
+    Highcharts.chart('graficoDeBarras', this.graficosDeBarras);
   }
 
   ngOnInit() {
     this.carregarGraficoDeRosca();
+    this.carregarGraficoDeBarras();
   }
 }
